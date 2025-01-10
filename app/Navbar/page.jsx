@@ -2,7 +2,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div className="hidden lg:block">
       <nav className="bg-black px-4 py-3">
         <div className="container mx-auto flex justify-between items-center">
           <ul className="flex space-x-8 text-white">

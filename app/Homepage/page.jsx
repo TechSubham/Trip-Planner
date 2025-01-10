@@ -34,7 +34,7 @@ const Page = () => {
             <div className="absolute inset-0 bg-black bg-opacity-50 rounded-3xl"></div>
 
             <div className="relative z-10 h-full flex items-center justify-center flex-col space-y-6 md:space-y-8 lg:space-y-16 py-6 md:py-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-20 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6  space-x-16">
                 <div className="text-black flex flex-col items-center">
                   <Combobox items={frameworks} placeholder="Travel days" />
                 </div>
@@ -46,7 +46,7 @@ const Page = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-20 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6  space-x-12">
                 <div className="text-black flex flex-col items-center">
                   <Combobox
                     items={frameworks}
