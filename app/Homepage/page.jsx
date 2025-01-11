@@ -1,18 +1,37 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Homepagebg from "../Assets/homepagebg.jpeg";
-import Combobox, {
-  frameworks,
-  languages,
-  databases,
-} from "../../components/ui/Combox";
+import Combobox from "../../components/ui/Combobox";
 import Card from "../Assets/travelcard";
-import Navbar from "../Navbar/page"
+import Navbar from "../Navbar/page";
+import Link from "next/link";
 
 const Page = () => {
+  const travelDaysOptions = [
+    { value: "1-3", label: "1-3 days" },
+    { value: "4-7", label: "4-7 days" },
+    { value: "8-14", label: "8-14 days" },
+    { value: "15+", label: "15+ days" },
+  ];
+
+  const transportOptions = [
+    { value: "car", label: "Car" },
+    { value: "train", label: "Train" },
+    { value: "plane", label: "Plane" },
+    { value: "bus", label: "Bus" },
+  ];
+
+  const travelStyleOptions = [
+    { value: "luxury", label: "Luxury" },
+    { value: "budget", label: "Budget" },
+    { value: "adventure", label: "Adventure" },
+    { value: "relaxation", label: "Relaxation" },
+  ];
+
   return (
-      <>
-      <Navbar/>
+    <>
+      <Navbar />
       <div className="min-h-screen w-full">
         <div className="relative min-h-[75vh] w-full">
           <Image
@@ -34,36 +53,55 @@ const Page = () => {
             <div className="absolute inset-0 bg-black bg-opacity-50 rounded-3xl"></div>
 
             <div className="relative z-10 h-full flex items-center justify-center flex-col space-y-6 md:space-y-8 lg:space-y-16 py-6 md:py-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6  space-x-16">
-                <div className="text-black flex flex-col items-center">
-                  <Combobox items={frameworks} placeholder="Travel days" />
-                </div>
-                <div className="text-black flex flex-col items-center">
-                  <Combobox items={languages} placeholder="Origin" />
-                </div>
-                <div className="text-black flex flex-col items-center">
-                  <Combobox items={databases} placeholder="Destination" />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6  space-x-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 <div className="text-black flex flex-col items-center">
                   <Combobox
-                    items={frameworks}
-                    placeholder="Means of transport"
+                    options={travelDaysOptions}
+                    placeholder="Travel days"
+                    searchPlaceholder="Search travel days..."
                   />
                 </div>
                 <div className="text-black flex flex-col items-center">
-                  <Combobox items={frameworks} placeholder="Travel style" />
+                  <Combobox
+                    options={[]}
+                    placeholder="Origin"
+                    searchPlaceholder="Search origin..."
+                  />
+                </div>
+                <div className="text-black flex flex-col items-center">
+                  <Combobox
+                    options={[]}
+                    placeholder="Destination"
+                    searchPlaceholder="Search destination..."
+                  />
                 </div>
               </div>
 
-              <button className="px-4 md:px-6 py-2 md:py-3 bg-pink-600 text-white font-bold rounded-lg hover:bg-pink-700 transition text-sm md:text-base w-full md:w-auto">
-                ✨ Run
-              </button>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div className="text-black flex flex-col items-center">
+                  <Combobox
+                    options={transportOptions}
+                    placeholder="Means of transport"
+                    searchPlaceholder="Search transport..."
+                  />
+                </div>
+                <div className="text-black flex flex-col items-center">
+                  <Combobox
+                    options={travelStyleOptions}
+                    placeholder="Travel style"
+                    searchPlaceholder="Search travel style..."
+                  />
+                </div>
+              </div>
+              <Link href="/Iterate">
+                <button className="px-4 md:px-6 py-2 md:py-3 bg-pink-600 text-white font-bold rounded-lg hover:bg-pink-700 transition text-sm md:text-base w-full md:w-auto">
+                  ✨ Run
+                </button>
+              </Link>
             </div>
           </div>
         </div>
+
         <div className="mt-5 border border-gray-500 m-4 rounded-3xl">
           <div className="text-white font-bold text-3xl text-center mt-5">
             Recently Created Trip Plans
@@ -96,13 +134,14 @@ const Page = () => {
             </div>
           </div>
         </div>
+
         <div>
           <div className="flex justify-center space-x-6 items-center bg-black text-white p-6 rounded-lg shadow-lg">
             <div>
               <h3 className="text-lg font-semibold">
-                Don’t see the right plan for you?
+                Don't see the right plan for you?
               </h3>
-              <p className="text-sm text-gray-400">We’ve got you covered</p>
+              <p className="text-sm text-gray-400">We've got you covered</p>
             </div>
             <button className="flex items-center px-6 py-2 bg-red-600 text-white font-medium text-sm rounded-full border border-purple-500 hover:bg-red-700 transition duration-300">
               ✨ Tailor your plan

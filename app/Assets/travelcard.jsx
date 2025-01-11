@@ -6,14 +6,14 @@ import Chile from "../Assets/chile1.jpeg";
 
 const AdventureCard = () => {
   return (
-    <Card className="relative w-72 overflow-hidden bg-gray-600 text-white rounded-xl">
+    <Card className="relative w-72 overflow-hidden bg-black text-white rounded-xl">
       <div className="relative h-80 w-full">
         <Image
           src={Chile}
           className="h-60 object-cover opacity-90"
         />
       </div>
-      <CardContent className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-black/0">
+      <CardContent className="absolute bottom-0 left-0 right-0 p-4 ">
         <h2 className="text-xl font-semibold mb-3">
           6 Days Adventure in Chile
         </h2>
