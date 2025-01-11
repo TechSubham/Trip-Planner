@@ -107,41 +107,25 @@ const Page = () => {
             Recently Created Trip Plans
           </div>
 
-          <div className="grid grid-cols-4 justify-center items-center ml-12 mt-10 mb-10 gap-4">
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
-            <div>
-              <Card />
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center items-center ml-4 mt-10 mb-10 gap-4">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
 
         <div>
-          <div className="flex justify-center space-x-6 items-center bg-black text-white p-6 rounded-lg shadow-lg">
-            <div>
+          <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 items-center bg-black text-white p-6 rounded-lg shadow-lg">
+            <div className="text-center md:text-left">
               <h3 className="text-lg font-semibold">
-                Don't see the right plan for you?
+                Don&apos;t see the right plan for you?
               </h3>
-              <p className="text-sm text-gray-400">We've got you covered</p>
+              <p className="text-sm text-gray-400">We&apos;ve got you covered</p>
             </div>
             <button className="flex items-center px-6 py-2 bg-red-600 text-white font-medium text-sm rounded-full border border-purple-500 hover:bg-red-700 transition duration-300">
               ✨ Tailor your plan
